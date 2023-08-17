@@ -2,7 +2,7 @@ import pandas as pd
 from NLPWash import textscrub
 
 df = pd.read_csv(r'D:\NMIMS-Hiten\NLP\Disaster Tweets\train.csv')
-print(df.head())
+df.head()
 
 a = textscrub.TextProcessor()
 
@@ -16,4 +16,4 @@ df['normalized_text'] = df['text'].apply(a.normalize_text,
                                         remove_hyperlinks= True,
                                         stemming = 'SnowballStemmer',
                                         lemmatizing=True)
-print(df.head())
+df.head()
